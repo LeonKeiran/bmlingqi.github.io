@@ -1749,6 +1749,9 @@ textarea {
   line-height: 0.75em;
   vertical-align: -0.0667em;
 }
+.gitalk-container {
+  margin: 10px;
+}
 .table-container {
   overflow: auto;
 }

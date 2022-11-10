@@ -1,0 +1,427 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="DTBlog" href="https://blog.zyflint.eu.org/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="DTBlog" href="https://blog.zyflint.eu.org/atom.xml" />
+<link rel="alternate" type="application/json" title="DTBlog" href="https://blog.zyflint.eu.org/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="java,springboot,mybatis-plus" />
+
+
+<link rel="canonical" href="https://blog.zyflint.eu.org/posts/java/3b0f689f.html">
+
+
+
+  <title>
+Springboot + MybatisPlus (3.5.3) 代码生成器 - java |
+DTBlog = DTBlog</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Springboot + MybatisPlus (3.5.3) 代码生成器
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-11-10 13:43:34">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-11-10T13:43:34+08:00">2022-11-10</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">DTBlog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://www.dmoe.cc/random.php?966311"></li>
+          <li class="item" data-background-image="https://www.dmoe.cc/random.php?477248"></li>
+          <li class="item" data-background-image="https://www.dmoe.cc/random.php?812338"></li>
+          <li class="item" data-background-image="https://www.dmoe.cc/random.php?533797"></li>
+          <li class="item" data-background-image="https://www.dmoe.cc/random.php?830020"></li>
+          <li class="item" data-background-image="https://www.dmoe.cc/random.php?11457"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/java/" itemprop="item" rel="index" title="分类于 java"><span itemprop="name">java</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://blog.zyflint.eu.org/posts/java/3b0f689f.html">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Bemil_Lingqi">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DTBlog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="springboot-mybatisplus-代码生成器代码"><a class="markdownIt-Anchor" href="#springboot-mybatisplus-代码生成器代码">#</a> Springboot + MybatisPlus 代码生成器代码</h2>
+<h5 id="添加maven依赖"><a class="markdownIt-Anchor" href="#添加maven依赖">#</a> 添加 maven 依赖</h5>
+<h5 id="pomxml"><a class="markdownIt-Anchor" href="#pomxml">#</a> pom.xml</h5>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.freemarker<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>freemarker<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="在srctestjava包下创建java类codegenerator"><a class="markdownIt-Anchor" href="#在srctestjava包下创建java类codegenerator">#</a> 在 <code>src/test/java</code>  包下创建 Java 类 <code>CodeGenerator</code></h5>
+<h5 id="codegeneratorjava"><a class="markdownIt-Anchor" href="#codegeneratorjava">#</a> CodeGenerator.java</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.FieldFill;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.FastAutoGenerator;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.DataSourceConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.OutputFile;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.fill.Column;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@FileName</span>: Codegenerator</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: MybatisPlus-3.5.3代码生成器</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Bemil_Lingqi &lt;bemiou_lingqi@163.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2022/11/10</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CodeGenerator</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        generator();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">scanner</span><span class="params">(String msg)</span> &#123;</span><br><span class="line">        System.out.print(msg);</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="keyword">return</span> scanner.next();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">generator</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">// 数据库连接URL</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">dataUrl</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/数据库名?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&quot;</span>;</span><br><span class="line">        <span class="comment">// 数据库用户名</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">dataUsername</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="comment">// 数据库密码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">dataPassword</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (dataUrl.equals(<span class="string">&quot;&quot;</span>)) &#123;</span><br><span class="line">            dataUrl = scanner(<span class="string">&quot;请输入数据库链接URL,或在代码中设置数据库连接URL&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (dataUsername.equals(<span class="string">&quot;&quot;</span>)) &#123;</span><br><span class="line">            dataUsername = scanner(<span class="string">&quot;请输入数据库用户名,或在代码中设置数据库用户名:&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (dataPassword.equals(<span class="string">&quot;&quot;</span>)) &#123;</span><br><span class="line">            dataPassword = scanner(<span class="string">&quot;请输入数据库密码,或在代码中设置数据库密码:&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        DataSourceConfig.<span class="type">Builder</span> <span class="variable">sourceConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceConfig</span>.Builder(</span><br><span class="line">                dataUrl,</span><br><span class="line">                dataUsername,</span><br><span class="line">                dataPassword);</span><br><span class="line">        FastAutoGenerator.create(sourceConfig)</span><br><span class="line">                .globalConfig((scanner, builder) -&gt;</span><br><span class="line">                        builder.author(scanner.apply(<span class="string">&quot;请输入作者名称:&quot;</span>)) <span class="comment">// 设置作者名</span></span><br><span class="line">                                .enableSwagger() <span class="comment">// 开启Swagger</span></span><br><span class="line">                                .fileOverride() <span class="comment">// 覆盖已有文件</span></span><br><span class="line">                                .outputDir(System.getProperty(<span class="string">&quot;user.dir&quot;</span>) + <span class="string">&quot;\\src\\main\\java&quot;</span>))</span><br><span class="line">                .packageConfig((scanner, builder) -&gt;</span><br><span class="line">                        builder.parent(scanner.apply(<span class="string">&quot;请输入包名:&quot;</span>)) <span class="comment">// 设置父包名</span></span><br><span class="line">                                .moduleName(scanner.apply(<span class="string">&quot;请输入模块名称&quot;</span>)) <span class="comment">// 设置模块名称</span></span><br><span class="line">                                .pathInfo(Collections.singletonMap(OutputFile.xml, System.getProperty(<span class="string">&quot;user.dir&quot;</span>) + <span class="string">&quot;\\src\\main\\resource\\mapper&quot;</span>))) <span class="comment">// 设置mapper xml文件存放路径</span></span><br><span class="line">                .strategyConfig((scanner, builder) -&gt;</span><br><span class="line">                        builder.addInclude(getTables(scanner.apply(<span class="string">&quot;请输入需要生成的表名(多个表名请使用英文逗号分割,所有表请输入:all): &quot;</span>)))</span><br><span class="line">                                .controllerBuilder() <span class="comment">// Controller配置</span></span><br><span class="line">                                    .enableRestStyle() <span class="comment">//使用@RestController注解</span></span><br><span class="line">                                    .enableHyphenStyle() <span class="comment">// 下划线转驼峰</span></span><br><span class="line">                                .entityBuilder() <span class="comment">// Entity配置</span></span><br><span class="line">                                    .enableLombok() <span class="comment">// 使用lombok样式</span></span><br><span class="line">                                    .enableChainModel() <span class="comment">// 启用链式调用方式</span></span><br><span class="line">                                    .enableRemoveIsPrefix() <span class="comment">// 删除Boolean类型is前缀</span></span><br><span class="line">                                    .enableTableFieldAnnotation() <span class="comment">// 生成字段注解</span></span><br><span class="line">                                    .addTableFills(</span><br><span class="line">                                            <span class="keyword">new</span> <span class="title class_">Column</span>(<span class="string">&quot;create_time&quot;</span>, FieldFill.INSERT)</span><br><span class="line">                                    ) <span class="comment">// 添加表字段填充</span></span><br><span class="line">                                .build()</span><br><span class="line">                                .mapperBuilder() <span class="comment">// Mapper配置</span></span><br><span class="line">                                    .enableMapperAnnotation() <span class="comment">// 开启Mapper注解</span></span><br><span class="line">                                .serviceBuilder()<span class="comment">// Service配置</span></span><br><span class="line">                                    .formatServiceFileName(<span class="string">&quot;%sService&quot;</span>) <span class="comment">// 去除Service前面的I字符</span></span><br><span class="line">                                    .formatServiceImplFileName(<span class="string">&quot;%sServiceImpl&quot;</span>) <span class="comment">// 去除ServiceImpl前面的I字符</span></span><br><span class="line">                                .build())</span><br><span class="line">                .templateEngine(<span class="keyword">new</span> <span class="title class_">FreemarkerTemplateEngine</span>()) <span class="comment">// 使用Freemarker模板引擎，默认使用Velocity模板引擎</span></span><br><span class="line">                .execute();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 处理 all 情况</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title function_">getTables</span><span class="params">(String tables)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;all&quot;</span>.equals(tables) ? Collections.emptyList() : Arrays.asList(tables.split(<span class="string">&quot;,&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/java-springboot-mybatis-plus/" rel="tag"><i class="ic i-tag"></i> java,springboot,mybatis-plus</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-11-10 15:48:30" itemprop="dateModified" datetime="2022-11-10T15:48:30+08:00">2022-11-10</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Bemil_Lingqi 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Bemil_Lingqi 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="Bemil_Lingqi 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Bemil_Lingqi <i class="ic i-at"><em>@</em></i>DTBlog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.zyflint.eu.org/posts/java/3b0f689f.html" title="Springboot + MybatisPlus (3.5.3) 代码生成器">https://blog.zyflint.eu.org/posts/java/3b0f689f.html</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/posts/uncategorized/4a17b156.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;www.dmoe.cc&#x2F;random.php?873621" title="Hello World">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Hello World</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+          <div id="gitalk-container"></div>
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#springboot-mybatisplus-%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text"> Springboot + MybatisPlus 代码生成器代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0maven%E4%BE%9D%E8%B5%96"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"> 添加 maven 依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#pomxml"><span class="toc-number">1.0.0.2.</span> <span class="toc-text"> pom.xml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8srctestjava%E5%8C%85%E4%B8%8B%E5%88%9B%E5%BB%BAjava%E7%B1%BBcodegenerator"><span class="toc-number">1.0.0.3.</span> <span class="toc-text"> 在 src&#x2F;test&#x2F;java  包下创建 Java 类 CodeGenerator</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#codegeneratorjava"><span class="toc-number">1.0.0.4.</span> <span class="toc-text"> CodeGenerator.java</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/posts/java/3b0f689f.html" rel="bookmark" title="Springboot + MybatisPlus(3.5.3)代码生成器">Springboot + MybatisPlus(3.5.3)代码生成器</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Bemil_Lingqi"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Bemil_Lingqi</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">2</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">1</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">1</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/posts/uncategorized/4a17b156.html" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/posts/java/3b0f689f.html" title="Springboot + MybatisPlus(3.5.3)代码生成器">Springboot + MybatisPlus(3.5.3)代码生成器</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Bemil_Lingqi @ DTBlog</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+      var gitalk = new Gitalk({
+        githubID: 'bmlingqi',
+        clientID: 'a1423fb47d0ca45832d1',
+        clientSecret: '489de0a5b79891fffb04a8c8662f56119b550b0d',
+        repo: 'bmlingqi.github.io',
+        owner: 'bmlingqi',
+        admin: ['bmlingqi'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+      gitalk.render("gitalk-container")
+    </script>
+  
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'posts/java/3b0f689f.html',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
