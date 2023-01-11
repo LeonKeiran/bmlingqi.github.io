@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.zyflint.eu.org/posts/uncategorized/3077696239.html</loc>
+    <loc>https://blog.bemiou.cn/posts/uncategorized/3077696239.html</loc>
     
     <lastmod>2022-11-25</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://blog.zyflint.eu.org/posts/java/3b0f689f.html</loc>
+    <loc>https://blog.bemiou.cn/posts/java/3b0f689f.html</loc>
     
     <lastmod>2022-11-10</lastmod>
     
@@ -21,7 +21,7 @@
   
 
   <url>
-    <loc>https://blog.zyflint.eu.org/</loc>
+    <loc>https://blog.bemiou.cn/</loc>
     <lastmod>2023-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -29,14 +29,14 @@
 
   
   <url>
-    <loc>https://blog.zyflint.eu.org/tags/pc-windows-%E8%BD%AF%E4%BB%B6-%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://blog.bemiou.cn/tags/pc-windows-%E8%BD%AF%E4%BB%B6-%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.zyflint.eu.org/tags/java-springboot-mybatis-plus/</loc>
+    <loc>https://blog.bemiou.cn/tags/java-springboot-mybatis-plus/</loc>
     <lastmod>2023-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -45,7 +45,7 @@
 
   
   <url>
-    <loc>https://blog.zyflint.eu.org/categories/java/</loc>
+    <loc>https://blog.bemiou.cn/categories/java/</loc>
     <lastmod>2023-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
