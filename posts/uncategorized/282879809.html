@@ -105,12 +105,12 @@ DTBlog = DTBlog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?265187"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?605606"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?331243"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?209475"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?675472"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?155226"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?697532"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?196151"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?884780"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?404097"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?794106"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?917586"></li>
         </ul>
       </div>
     </header>
@@ -168,25 +168,25 @@ DTBlog = DTBlog</title>
 <p>左侧蓝色的是付费版本只能免费只能新用户试用 30 天，右侧的是免费版，功能差不多，左侧的版本要强大点，加入交流群可获取左侧版本的激活工具</p>
 <h2 id="3下载服务端核心"><a class="markdownIt-Anchor" href="#3下载服务端核心">#</a> 3. 下载服务端核心</h2>
 <p>由于本教程使用 spigot 服务端核心，所有需要下载 spigot 服务端核心，由于官网<span class="exturl" data-url="aHR0cHM6Ly9zcGlnb3RtYy5vcmcv">传送门</span>没有直接提供核心下载地址而是提供了自行构建工具，所以这里给出一个核心下载地址<span class="exturl" data-url="aHR0cHM6Ly9nZXRidWtraXQub3JnL2Rvd25sb2FkL3NwaWdvdA==">传送门</span>打开页面后往下滑找到对应的 Minecraft 版本那一栏，点击右侧的 Download 黄色背景按钮</p>
-<img data-src="../imgs/Minecraft插件开发-1环境搭建/2.png" alt="2" style="zoom:80%;" />
+<img data-src="/imgs/Minecraft插件开发-1环境搭建/2.png" alt="2" style="zoom:80%;" />
 <p>在打开的页面往下滑找到下面的 <code>You're about to download:</code>  字样，点击字样下面的黄色的 <code>Spigot-xxxx.jar</code>  黄色字样即可下载核心文件</p>
-<img data-src="Minecraft插件开发-1环境搭建/3.png" alt="3" style="zoom:80%;" />
+<img data-src="/imgs/Minecraft插件开发-1环境搭建/3.png" alt="3" style="zoom:80%;" />
 <h2 id="4创建项目"><a class="markdownIt-Anchor" href="#4创建项目">#</a> 4. 创建项目</h2>
 <p>打开安装好的 IDEA 编辑器找到左侧 <code>Plugins</code>  在打开的右侧标签页中选择左侧的名为 <code>Marketplace</code>  选项卡如下图中上方箭头所指位置继续在下方的搜索框中输入 <code>Chinese</code>  然后点击回车选择下图中所指位置下方的的插件点击右侧的安装</p>
-<img data-src="Minecraft插件开发-1环境搭建/4.png" alt="4" style="zoom:80%;" />
+<img data-src="/imgs/Minecraft插件开发-1环境搭建/4.png" alt="4" style="zoom:80%;" />
 <p>然后安装完后重启编辑器</p>
 <p>启动后点击创建项目</p>
 <p>左侧选项选择最上面的第一个</p>
-<img data-src="Minecraft插件开发-1环境搭建/5.png" alt="5" style="zoom:80%;" />
+<img data-src="/imgs/Minecraft插件开发-1环境搭建/5.png" alt="5" style="zoom:80%;" />
 <p>右侧名称输入插件名称，语言选择 Java, 构建系统选择 Maven 或者 Gradle,JDK 选择刚刚下载的 JDK，接着展开下面的高级设置，组 ID 一般输入自己网站域名反过来写就行，例如 <code>xxxx.com</code>  就输入 <code>com.xxxx</code>  若没有，输入 github 地址也行实在不行就输入邮箱吧。工件 ID 与上面的名称输入一致即可，最后点击下面的创建</p>
 <h2 id="5引入依赖"><a class="markdownIt-Anchor" href="#5引入依赖">#</a> 5. 引入依赖</h2>
-<p>打开项目跟没写的 pom.xml 文件，添加仓库地址</p>
+<p>打开项目根目录的 pom.xml 文件，添加仓库地址</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>spigotmc-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://hub.spigotmc.org/nexus/content/repositories/snapshots/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>点击编辑器右侧的 Maven 展开生命周期，分别运行 <code>clean</code>  和 <code>install</code></p>
 <p>运行完后继续在 pom.xml 文件加入依赖</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.spigotmc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spigot-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.12.2-R0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中 version 节点内容可在上方添加的仓库地址的 url 里面根据下载的服务端核心版本选择输入</p>
-<img data-src="Minecraft插件开发-1环境搭建/6.png" alt="6" style="zoom:80%;" />
+<img data-src="/imgs/Minecraft插件开发-1环境搭建/6.png" alt="6" style="zoom:80%;" />
 <p>按照依赖项的 <code>groupId</code>  节点内容依次点击网页中对应的蓝色链接没有了后点击与依赖项 <code>artifactId</code>  对应的蓝色链接在打开的页面内选择复制与自己下载的服务端核心匹配的蓝色链接文本 (注：去掉末尾的 <code>/</code>  字符) 填入依赖项的 <code>version</code>  节点内，最后依次运行编辑器右侧的 maven 标签页内的生命周期下的 <code>clean</code>  和 <code>install</code></p>
 <h2 id="6编写代码"><a class="markdownIt-Anchor" href="#6编写代码">#</a> 6. 编写代码</h2>
 <p>依次展开 <code>src</code>  目录下的 <code>main</code>  目录下的 <code>java</code>  目录，右键 <code>java</code>  目录其中的包名选择 <code>'新建'-'Java类'</code>  在打开的窗口中输入类名 <code>(一般为插件名称)</code> ，新建好后，该类需要继承 <code>org.bukkit.plugin.java</code>  包下的 <code>JavaPlugin</code>  类</p>
@@ -228,7 +228,7 @@ DTBlog = DTBlog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-01-13 22:26:57" itemprop="dateModified" datetime="2023-01-13T22:26:57+08:00">2023-01-13</time>
+    <time title="修改时间：2023-01-16 17:20:03" itemprop="dateModified" datetime="2023-01-16T17:20:03+08:00">2023-01-16</time>
   </span>
 </div>
 
@@ -283,7 +283,7 @@ DTBlog = DTBlog</title>
     <div class="item left">
       
 
-  <a href="/posts/uncategorized/3077696239.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;api.ixiaowai.cn&#x2F;api&#x2F;api2.php?252270" title="FileFilter - 多功能文件筛选器">
+  <a href="/posts/uncategorized/3077696239.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;api.ixiaowai.cn&#x2F;api&#x2F;api2.php?130877" title="FileFilter - 多功能文件筛选器">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>FileFilter - 多功能文件筛选器</h3>
