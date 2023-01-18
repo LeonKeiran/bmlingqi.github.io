@@ -27,15 +27,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="pc,windows,软件,工具" />
+  <meta name="keywords" content="Minecraft,教程,开发" />
 
 
-<link rel="canonical" href="https://blog.bemiou.cn/posts/uncategorized/3077696239.html">
+<link rel="canonical" href="https://blog.bemiou.cn/posts/uncategorized/856814762.html">
 
 
 
   <title>
-FileFilter - 多功能文件筛选器 |
+Minecraft 插件开发 #3 事件 |
 DTBlog = DTBlog</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -63,16 +63,16 @@ DTBlog = DTBlog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">FileFilter - 多功能文件筛选器
+  <h1 itemprop="name headline">Minecraft 插件开发 #3 事件
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-11-25 20:28:23">
+  <span class="item" title="创建时间：2023-01-18 16:04:20">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-11-25T20:28:23+08:00">2022-11-25</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-01-18T16:04:20+08:00">2023-01-18</time>
   </span>
 </div>
 
@@ -105,12 +105,12 @@ DTBlog = DTBlog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?932969"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?529322"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?545044"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?39265"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?473044"></li>
-          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?145246"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?399706"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?500862"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?766423"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?450625"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?197420"></li>
+          <li class="item" data-background-image="https://api.ixiaowai.cn/api/api2.php?233152"></li>
         </ul>
       </div>
     </header>
@@ -139,7 +139,7 @@ DTBlog = DTBlog</title>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://blog.bemiou.cn/posts/uncategorized/3077696239.html">
+  <link itemprop="mainEntityOfPage" href="https://blog.bemiou.cn/posts/uncategorized/856814762.html">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -154,25 +154,40 @@ DTBlog = DTBlog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h4 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h4>
-<p>大家是否有时候需要在一个文件夹内容寻找一个包含了特定内容的文件或者包含某段内容文件名的文件呢？用 Windows 文件浏览器自带的搜索呢？又太鸡肋了，百度呢？又找不到拥有该功能的软件。</p>
-<p>于是，小编就开发了一款软件集成了这两种功能并给它命名 &quot;FileFilter&quot;，名称也通俗易懂，&quot;File&quot; 英译为: “文件”，“Filter&quot;英译为&quot; 过滤器”，因此该软件又名文件过滤器。</p>
-<p>该软件采用不怎么火的 C# 开发，因此若遇见无法打开请检查您的电脑是否下载并安装了.NET 环境。</p>
-<h4 id="界面预览"><a class="markdownIt-Anchor" href="#界面预览">#</a> 界面预览</h4>
-<img data-src="/imgs/FileFilter - 多功能文件筛选器/AppMainBg.png" width="600" alt="软件主界面">
-<p>如图，界面很简洁.</p>
-<h4 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法">#</a> 使用方法</h4>
+    <h2 id="0简介"><a class="markdownIt-Anchor" href="#0简介">#</a> 0. 简介</h2>
+<ul>
+<li>本教程基于 1.16.1 服务端核心开发</li>
+<li>对应 B 站视频：还未发布</li>
+<li>交流群: <span class="exturl" data-url="aHR0cHM6Ly9qcS5xcS5jb20vP193dj0xMDI3JmFtcDtrPWc3STdHMGpz">791811601</span></li>
+</ul>
+<h2 id="1教程目录"><a class="markdownIt-Anchor" href="#1教程目录">#</a> 1. 教程目录</h2>
+<ul>
+<li>第一期: <a href="https://blog.bemiou.cn/posts/uncategorized/282879809.html">环境搭建</a> <span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWYzNDExVTdieQ==">B 站视频传送门</span></li>
+<li>第二期: <a href="https://blog.bemiou.cn/posts/uncategorized/1335942595.html">指令</a> <span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUxZNDExMTd3eS8/dmRfc291cmNlPWViNWNkOGM3NjQ2MzJjNThkNzI2ZjBhM2I1M2VlZmM3">B 站视频传送门</span></li>
+</ul>
+<h2 id="2事件注册步骤"><a class="markdownIt-Anchor" href="#2事件注册步骤">#</a> 2. 事件注册步骤</h2>
+<p><code>插件主类注册</code>  -&gt; <code>编写事件处理逻辑方法</code></p>
+<h2 id="3编写代码"><a class="markdownIt-Anchor" href="#3编写代码">#</a> 3. 编写代码</h2>
+<p>右键包名新建一个事件类 <code>PlayerEvents</code>  名称随意，该类需要实现 <code>org.bukkit.event</code>  包下的 <code>Listener</code>  接口，该类没有提供方法，需要在其中创建一个方法并给方法添加 <code>org.bukkit.event</code>  包下的 <code>EventHandler</code>  注解，然后方法参数只能有一个，即是需要监听的事件类，例如:  <code>PlayerJoinEvent</code> , <code>AsyncPlayerChatEvent</code>  等，列举的这两个事件分别指 <code>玩家加入事件</code> ， <code>玩家聊天事件</code> 更多事件可以前往<span class="exturl" data-url="aHR0cHM6Ly9idWtraXQud2luZGl0Lm5ldC9qYXZhZG9jL29yZy9idWtraXQvZXZlbnQvcGFja2FnZS1zdW1tYXJ5Lmh0bWw=">传送门</span>查看</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.bukkit.event.EventHandler;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.event.Listener;</span><br><span class="line"><span class="keyword">import</span> org.bukkit.event.player.PlayerJoinEvent;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@FileName</span>: CommandExecutor</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: Command</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span>: MyFirstPluginDemo</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Package</span>: CommandExecutor</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Bemil_Lingqi &lt;bemiou_lingqi@163.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2023/1/11</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Website</span>: http://www.bemiou.cn/</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Github</span>: https://github.com/bmlingqi</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@WechatPublicNumber</span>: 贝米尔科技</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PlayerEvents</span> <span class="keyword">implements</span> <span class="title class_">Listener</span> &#123;</span><br><span class="line"> 	<span class="meta">@EventHandler</span></span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onPlayerJoin</span><span class="params">(PlayerJoinEvent event)</span> &#123;</span><br><span class="line">        Bukkit.broadcastMessage(<span class="string">&quot;玩家 [&quot;</span> + event.getPlayer().getDisplayName() + <span class="string">&quot;] 加入了游戏&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><code>EventHandler</code>  注解接收两个参数:</p>
+<ul>
+<li><code>priority</code> : 指定事件的优先级 (可选，默认值为: <code>EventPriority.NORMAL</code> ) (接收 <code>EventPriority</code>  枚举类类型数据)</li>
+<li><code>ignoreCancelled</code> : 处理程序是否需要忽略已取消的事件 (可选，默认值为:  <code>false</code> )(接收布尔值类类型数据)</li>
+</ul>
+<p>一般情况下不需要给该注解传入参数</p>
+<p><code>EventPriority</code>  枚举的优先级顺序为:  <code>LOWEST</code>  &lt;  <code>LOW</code>  &lt;  <code>NORMAL</code>  &lt;  <code>HIGH</code>  &lt;  <code>HIGHEST</code>  &lt;  <code>MONITOR</code></p>
+<p>注:</p>
 <ol>
-<li>下载压缩包</li>
-<li>解压压缩包</li>
-<li>双击文件夹中的 &quot;FileFilter.exe&quot; 文件即可</li>
+<li>一个类可以监听多个事件</li>
+<li>若使用上面的方法创建的事件类在插件主类必须使用 <code>registerEvents</code>  方法注册事件</li>
 </ol>
-<h4 id="下载方式"><a class="markdownIt-Anchor" href="#下载方式">#</a> 下载方式</h4>
-<p>微信关注公众号 &quot;贝米尔科技&quot;，后台回复 &quot;1112&quot; 即可，或者扫描下面二维码快捷关注公众号</p>
-<img data-src="/imgs/wx.jpg" width="160" alt="扫描二维码关注公众号">
+<p>然后再插件主类注册这个类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onEnable</span><span class="params">()</span> &#123;</span><br><span class="line">    getServer().getPluginManager().registerEvents(<span class="keyword">new</span> <span class="title class_">PlayerEvents</span>(), <span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后进入游戏即可看到，加入游戏时候默认的黄色字体替换成了事件内编写的内容</p>
 
       <div class="tags">
-          <a href="/tags/pc-windows-%E8%BD%AF%E4%BB%B6-%E5%B7%A5%E5%85%B7/" rel="tag"><i class="ic i-tag"></i> pc,windows,软件,工具</a>
+          <a href="/tags/Minecraft-%E6%95%99%E7%A8%8B-%E5%BC%80%E5%8F%91/" rel="tag"><i class="ic i-tag"></i> Minecraft,教程,开发</a>
       </div>
   </div>
 
@@ -184,7 +199,7 @@ DTBlog = DTBlog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-11-25 21:45:08" itemprop="dateModified" datetime="2022-11-25T21:45:08+08:00">2022-11-25</time>
+    <time title="修改时间：2023-01-18 16:32:54" itemprop="dateModified" datetime="2023-01-18T16:32:54+08:00">2023-01-18</time>
   </span>
 </div>
 
@@ -220,7 +235,7 @@ DTBlog = DTBlog</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://blog.bemiou.cn/posts/uncategorized/3077696239.html" title="FileFilter - 多功能文件筛选器">https://blog.bemiou.cn/posts/uncategorized/3077696239.html</a>
+    <a href="https://blog.bemiou.cn/posts/uncategorized/856814762.html" title="Minecraft 插件开发 #3 事件">https://blog.bemiou.cn/posts/uncategorized/856814762.html</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -239,22 +254,14 @@ DTBlog = DTBlog</title>
     <div class="item left">
       
 
-  <a href="/posts/java/3b0f689f.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;api.ixiaowai.cn&#x2F;api&#x2F;api2.php?703572" title="Springboot + MybatisPlus(3.5.3)代码生成器">
+  <a href="/posts/uncategorized/1335942595.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;api.ixiaowai.cn&#x2F;api&#x2F;api2.php?935795" title="Minecraft插件开发#2指令">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> java</span>
-  <h3>Springboot + MybatisPlus(3.5.3)代码生成器</h3>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Minecraft插件开发#2指令</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/posts/uncategorized/282879809.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;api.ixiaowai.cn&#x2F;api&#x2F;api2.php?366338" title="Minecraft插件开发#1环境搭建">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>Minecraft插件开发#1环境搭建</h3>
-  </a>
-
     </div>
 </div>
 
@@ -272,7 +279,7 @@ DTBlog = DTBlog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%95%8C%E9%9D%A2%E9%A2%84%E8%A7%88"><span class="toc-number">2.</span> <span class="toc-text"> 界面预览</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text"> 使用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text"> 下载方式</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text"> 0. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text"> 1. 教程目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E4%BA%8B%E4%BB%B6%E6%B3%A8%E5%86%8C%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.</span> <span class="toc-text"> 2. 事件注册步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text"> 3. 编写代码</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -329,12 +336,10 @@ DTBlog = DTBlog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/posts/java/3b0f689f.html" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/posts/uncategorized/282879809.html" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -356,9 +361,10 @@ DTBlog = DTBlog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/java/" title="分类于 java">java</a>
 </div>
 
-    <span><a href="/posts/uncategorized/3077696239.html" title="FileFilter - 多功能文件筛选器">FileFilter - 多功能文件筛选器</a></span>
+    <span><a href="/posts/java/3b0f689f.html" title="Springboot + MybatisPlus(3.5.3)代码生成器">Springboot + MybatisPlus(3.5.3)代码生成器</a></span>
   </li>
 
       
@@ -367,7 +373,7 @@ DTBlog = DTBlog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/posts/uncategorized/282879809.html" title="Minecraft插件开发#1环境搭建">Minecraft插件开发#1环境搭建</a></span>
+    <span><a href="/posts/uncategorized/3077696239.html" title="FileFilter - 多功能文件筛选器">FileFilter - 多功能文件筛选器</a></span>
   </li>
 
       
@@ -392,10 +398,9 @@ DTBlog = DTBlog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/java/" title="分类于 java">java</a>
 </div>
 
-    <span><a href="/posts/java/3b0f689f.html" title="Springboot + MybatisPlus(3.5.3)代码生成器">Springboot + MybatisPlus(3.5.3)代码生成器</a></span>
+    <span><a href="/posts/uncategorized/282879809.html" title="Minecraft插件开发#1环境搭建">Minecraft插件开发#1环境搭建</a></span>
   </li>
 
   </ul>
@@ -441,7 +446,7 @@ DTBlog = DTBlog</title>
   
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'posts/uncategorized/3077696239.html',
+    path: 'posts/uncategorized/856814762.html',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
